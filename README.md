@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# Nova Service Cloud UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Nova Service Cloud is a front-end only experience built with **React**, **TypeScript**, and **Vite**. It delivers a modern ticketing mission control that surfaces live incident metrics, service requests, change calendars, knowledge recommendations, and role management in a polished, themeable workspace.
 
-Currently, two official plugins are available:
+> ℹ️ This repository currently exposes UI/UX only—no backend or API integrations are wired yet.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Highlights
 
-## React Compiler
+- **Mission Control Dashboard** – Overview cards, major incident table, queue watch, knowledge signals, change timeline, and agent activity feed.
+- **Operational Modules** – Dedicated views for incidents, service requests, changes, knowledge, users & roles, and approvers.
+- **Authentication Surfaces** – Login, signup, and recovery flows with storytelling and testimonials.
+- **Themes & Layouts** – Switch between multiple color themes and layout presets (classic, compact, crisp) from the settings page.
+- **Persistent Nav Collapse** – Left rail can collapse/expand, remembering the user preference.
+- **Componentized System** – Reusable layout, theme, and pagination utilities keep the UI consistent.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+```bash
+# Install dependencies
+npm install
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Start the dev server
+npm run dev
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Lint the project
+npm run lint
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Build for production
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open the dev server URL printed in your terminal (usually <http://localhost:5173>) to explore the UI.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Project Structure
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├─ layouts/            # Application shell (sidebar, header)
+├─ pages/              # Route-based pages (dashboard, incidents, settings, auth, etc.)
+├─ context/            # Theme and layout providers
+├─ styles/             # Shared color + layout tokens
+├─ components/         # Reusable building blocks (pagination, etc.)
+├─ hooks/              # Hooks such as layout application
+├─ App.tsx             # Route configuration
+├─ main.tsx            # App bootstrap with providers
+└─ index.css           # Global base styles
+```
+
+## Customisation
+
+- **Themes** – Update `src/styles/colors.css` to add or adjust palettes.
+- **Layouts** – Modify `src/styles/layouts.css` to tweak radii, navigation widths, or layout presets.
+- **Navigation** – Update `workspaceNav` in `src/layouts/WorkspaceLayout.tsx` to add/remove sections.
+
+## Roadmap
+
+- Wire up backend APIs for real ticket data
+- Implement authentication and authorization flows
+- Add accessibility audits and end-to-end tests
+
+Feel free to fork and adapt the UI to fit your support workflows. If you run into issues or have suggestions, open an issue or drop a note.✨
