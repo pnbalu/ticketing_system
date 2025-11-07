@@ -1,0 +1,108 @@
+body[data-layout='classic'] {
+  --card-radius-lg: 24px;
+  --card-radius-md: 16px;
+  --card-radius-sm: 10px;
+  --pill-radius: 999px;
+  --nav-expanded-width: 280px;
+  --nav-collapsed-width: 80px;
+  --nav-icon-bg: var(--accent-soft);
+  --nav-icon-active-bg: var(--accent-primary);
+  --nav-icon-color: var(--text-secondary);
+  --nav-icon-active-color: #050815;
+  --nav-hover-bg: var(--accent-soft);
+  --nav-active-bg: var(--accent-soft);
+  --nav-active-outline: var(--border-soft);
+}
+
+body[data-layout='classic'] .workspace-nav {
+  width: 280px;
+}
+
+body[data-layout='classic'] .workspace-shell {
+  grid-template-columns: 280px 1fr;
+}
+
+body[data-layout='classic'] .workspace-topbar {
+  margin-bottom: 1.2rem;
+}
+
+body[data-layout='compact'] {
+  --card-radius-lg: 10px;
+  --card-radius-md: 8px;
+  --card-radius-sm: 6px;
+  --pill-radius: 12px;
+  --nav-expanded-width: 220px;
+  --nav-collapsed-width: 72px;
+  --nav-icon-bg: rgba(233, 239, 255, 0.06);
+  --nav-icon-active-bg: var(--accent-primary);
+  --nav-icon-color: rgba(233, 239, 255, 0.72);
+  --nav-icon-active-color: #050815;
+  --nav-hover-bg: rgba(233, 239, 255, 0.08);
+  --nav-active-bg: rgba(233, 239, 255, 0.12);
+  --nav-active-outline: rgba(233, 239, 255, 0.25);
+}
+
+body[data-layout='compact'] .workspace-nav {
+  width: 220px;
+  padding: 2rem 1.4rem 1.4rem;
+}
+
+body[data-layout='compact'] .workspace-shell {
+  grid-template-columns: 220px 1fr;
+}
+
+body[data-layout='compact'] .workspace-menu a {
+  padding: 0.45rem 0.7rem 0.45rem 0.85rem;
+}
+
+body[data-layout='compact'] .workspace-menu .nav-icon {
+  width: 28px;
+  height: 28px;
+}
+
+body[data-layout='compact'] .workspace-topbar {
+  padding: 1.6rem 2rem 0;
+}
+
+body[data-layout='compact'] .workspace-main {
+  padding: 1.6rem 2rem 2rem;
+}
+
+body[data-layout='crisp'] {
+  --card-radius-lg: 0px;
+  --card-radius-md: 0px;
+  --card-radius-sm: 0px;
+  --pill-radius: 4px;
+  --nav-expanded-width: 260px;
+  --nav-collapsed-width: 72px;
+  --nav-icon-bg: rgba(255, 255, 255, 0.06);
+  --nav-icon-active-bg: rgba(255, 255, 255, 0.24);
+  --nav-icon-color: rgba(240, 244, 255, 0.75);
+  --nav-icon-active-color: rgba(12, 18, 28, 0.95);
+  --nav-hover-bg: rgba(255, 255, 255, 0.08);
+  --nav-active-bg: rgba(255, 255, 255, 0.12);
+  --nav-active-outline: rgba(255, 255, 255, 0.22);
+}
+
+body[data-layout='crisp'] .workspace-shell {
+  grid-template-columns: 280px 1fr;
+}
+
+body[data-layout='crisp'] .workspace-nav {
+  width: 280px;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(30px);
+}
+
+body[data-layout='crisp'] .workspace-menu a {
+  border-radius: 12px;
+  padding: 0.6rem 0.75rem 0.6rem 1rem;
+}
+
+body[data-layout='crisp'] .workspace-main {
+  padding: 2.4rem 3.2rem 3rem;
+}
+
+body[data-layout='crisp'] .workspace-topbar {
+  margin-bottom: 1.5rem;
+}
